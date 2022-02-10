@@ -102,6 +102,11 @@ defmodule Pento.Survey do
     Demographic.changeset(demographic, attrs)
   end
 
+  def get_demographic_by_user(user) do
+    Demographic.Query.for_user(user)
+    |> Repo.one()
+  end
+
   alias Pento.Survey.Rating
 
   @doc """
