@@ -6,6 +6,6 @@ defmodule Pento.Promo do
   end
 
   def send_promo(_recipient, _attrs) do
-    %{:ok, %Recipient{}}
+    {:ok, %Recipient{}}
   end
 end
