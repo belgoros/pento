@@ -12,9 +12,6 @@ defmodule PentoWeb.SurveyLive.Component do
     <h3>
       <%= render_slot(@inner_block) %>
     </h3>
-    <pre>
-    <%= inspect(assigns, pretty: true) %>
-    </pre>
     """
   end
 end
