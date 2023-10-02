@@ -1,5 +1,5 @@
 <div>
-  <.simple_form for={@form} phx-change="validate" phx-submit="save" id={@id}>
+  <.simple_form for={@form} phx-change="validate" phx-submit="save" id={@id} phx-target={@myself}>
     <.input
       field={@form[:gender]}
       type="select"
