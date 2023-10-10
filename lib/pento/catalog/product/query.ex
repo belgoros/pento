@@ -1,8 +1,7 @@
 defmodule Pento.Catalog.Product.Query do
   import Ecto.Query
   alias Pento.Catalog.Product
-  alias Pento.Survey.{Rating, Demographic}
-  alias Pento.Accounts.User
+  alias Pento.Survey.Rating
 
   def base, do: Product
 
