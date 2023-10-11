@@ -94,4 +94,18 @@ defmodule Pento.Catalog.Product.Query do
   defp apply_age_group_filter(query, _filter) do
     query
   end
+
+  def filter_by_gender(query \\ base(), filter) do
+    query
+    |> apply_gender_filter(filter)
+  end
+
+  defp apply_gender_filter(query, "all") do
+    query
+  end
+
+  defp apply_gender_filter(query, filter) do
+    query
+    |> where([p, r, u, d], d.gender == ^filter)
+  end
 end

@@ -2,7 +2,31 @@
   <h2 class="text-2xl font-light">Survey Results</h2>
   <div id="survey-results-component">
     <div class="container grid grid-cols-2 mx-4 my-4">
-      
+      <div>
+        <.form
+          for={%{}}
+          as={:gender_filter}
+          phx-change="gender_filter"
+          phx-target={@myself}
+          id="gender-form"
+        >
+          <label>By gender:</label>
+          <select name="gender_filter" id="gender_filter">
+            <%= for gender <-
+              [
+                "all",
+                "female",
+                "male",
+                "other",
+                "prefer not to say"
+              ] do %>
+              <option value={gender} selected={@gender_filter == gender}>
+                <%= gender %>
+              </option>
+            <% end %>
+          </select>
+        </.form>
+      </div>
       <div>
         <.form
           for={%{}}
@@ -23,6 +47,8 @@
         </.form>
       </div>
     </div>
-    <div id="survey-results-chart"><%= @chart_svg %></div>
+    <div id="survey-results-chart">
+      <%= @chart_svg %>
+    </div>
   </div>
 </section>
