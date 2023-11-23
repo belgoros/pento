@@ -13,4 +13,6 @@ defmodule Pento.Game.Point do
   def rotate(point, 90), do: point |> reflect |> transpose
   def rotate(point, 180), do: point |> reflect |> flip
   def rotate(point, 270), do: point |> flip |> transpose
+
+  def center(point), do: move(point, {-3, -3})
 end
